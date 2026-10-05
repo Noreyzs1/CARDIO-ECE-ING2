@@ -1,5 +1,4 @@
-#ifndef STATE_H
-#define STATE_H
+#pragma once
 
 #include "Arduino.h"
 #include "types.h"
@@ -50,5 +49,3 @@ typedef struct CoreState {
 typedef struct ComponentStatus {
     u8 flags;
 } ComponentStatus;
-
-#endif

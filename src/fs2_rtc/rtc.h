@@ -1,6 +1,6 @@
 #ifndef RTC_H
 #define RTC_H
-#include "../state.h"
+#include "../state.hpp"
 #include "ThreeWire.h"
 #include "RtcDS1302.h"
 

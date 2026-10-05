@@ -1,6 +1,6 @@
 #ifndef HEALTH_H
 #define HEALTH_H
-#include "../state.h"
+#include "../state.hpp"
 
 #define SEUIL_BAS 30
 #define SEUIL_MID 80
