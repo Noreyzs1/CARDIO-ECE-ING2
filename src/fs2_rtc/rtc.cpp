@@ -1,4 +1,4 @@
-#include "rtc.h"
+#include "rtc.hpp"
 
 // Initalisation RTC
 ThreeWire myWire(PIN_IO,PIN_CLK,PIN_CE);

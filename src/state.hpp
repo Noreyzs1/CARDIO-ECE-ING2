@@ -3,15 +3,6 @@
 #include "Arduino.h"
 #include "types.h"
 
-// PINS ATTENTION CE SERA A CHANGER  C'EST JUSTE POUR MON CODE QUE JE METS CA
-
-#define LED_ROUGE 1
-#define LED_VERTE 2
-#define LED_BLEU 3
-#define PIN_IO 4
-#define PIN_CLK 5
-#define PIN_CE 6
-
 // 𝐅𝐥𝐚𝐠𝐬
 typedef u8 ComponentFlag;
 

@@ -1,4 +1,4 @@
-#include "health.h"
+#include "health.hpp"
 HealthState etat = HEALTH_UNKNOWN;
 
 
@@ -41,8 +41,8 @@ String TextePatient(){
 }
 
 void AllumerLed(LedFlag couleur){
-    digitalWrite(LED_ROUGE,couleur & LED_RED);
-    digitalWrite(LED_VERTE,couleur &  LED_GREEN);
+    digitalWrite(PIN_ROUGE,couleur & LED_RED);
+    digitalWrite(PIN_VERTE,couleur &  LED_GREEN);
 }
 
 LedFlag ChoixCouleur(){
