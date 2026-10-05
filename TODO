@@ -1,0 +1,99 @@
+# TODO — CARDIO ECE
+
+## FS1 — Heart Rate
+
+- [x] Define FS1 public API
+- [x] Implement short moving average
+- [x] Implement baseline estimation
+- [x] Implement signal centering
+- [x] Implement normalization
+- [x] Implement beat detection
+- [x] Implement IBI averaging and BPM calculation
+- [x] Implement BPM validity checks
+- [x] Implement no-beat timeout
+
+### Hardware validation
+- [ ] Receive / retrieve WPSE340 sensor
+- [ ] Acquire raw WPSE340 signal
+- [ ] Verify actual sampling rate
+- [ ] Add 10 kΩ / 1 µF analog low-pass filter if accepted
+- [ ] Verify RC filter does not distort useful PPG waveform
+- [ ] Tune `PPG_SMOOTH_WINDOW_SAMPLES`
+- [ ] Tune `PPG_BASELINE_WINDOW_SAMPLES`
+- [ ] Tune `PPG_NORMALIZE_WINDOW_SAMPLES`
+- [ ] Tune `PPG_BEAT_THRESHOLD`
+- [ ] Test robustness against ambient light changes
+- [ ] Test robustness against finger movement
+- [ ] Verify no long-term BPM drift
+- [ ] Validate BPM against a reference measurement
+
+## FS2 — RTC
+
+- [ ] Implement DS1302 communication
+- [ ] Read date and time
+- [ ] Verify RTC keeps time after main power loss
+- [ ] Measure clock drift
+- [ ] Validate maximum drift requirement
+
+## FS3 — Health State
+
+- [ ] Define medical BPM thresholds
+- [ ] Implement LOW / NORMAL / HIGH classification
+- [ ] Drive yellow / green / red LEDs
+- [ ] Ensure only one LED can be active
+- [ ] Disable all LEDs when BPM is invalid
+
+## FS4 — Buzzer
+
+- [ ] Generate heartbeat-synchronized beep
+- [ ] Define low / normal / high tone frequencies
+- [ ] Implement buzzer enable / disable button
+- [ ] Ensure low input latency
+- [ ] Avoid blocking delays
+
+## FS5 — Displays
+
+- [ ] Initialize both SSD1306 displays
+- [ ] Display time and BPM on display 1
+- [ ] Display `-` when BPM is invalid
+- [ ] Plot PPG waveform on display 2
+- [ ] Implement graph time scale
+- [ ] Implement rotary encoder control
+- [ ] Minimize SRAM usage
+- [ ] Verify both displays can coexist within ATmega328P SRAM limits
+
+## FS6 — Storage
+
+- [ ] Define saved reading structure
+- [ ] Calculate maximum number of EEPROM records
+- [ ] Store BPM + date + time
+- [ ] Average 10 consecutive BPM measurements before saving
+- [ ] Trigger recording using a push button
+- [ ] Read saved measurements
+- [ ] Delete saved measurements
+- [ ] Preserve data after power loss
+- [ ] Implement French / English UI
+
+## Integration
+
+- [ ] Define final pin mapping
+- [ ] Complete `config.h`
+- [ ] Initialize all modules from `main.c`
+- [ ] Implement non-blocking main loop
+- [ ] Integrate FS1 → FS6
+- [ ] Test complete system
+- [ ] Check SRAM usage
+- [ ] Check flash usage
+- [ ] Remove debug code before final build
+
+## Validation / Documentation
+
+- [ ] Build technical requirement test table
+- [ ] Record validation results
+- [ ] Capture PPG curves for report
+- [ ] Document WPSE340 signal processing pipeline
+- [ ] Create system architecture diagram
+- [ ] Create program flowchart
+- [ ] Prepare report
+- [ ] Prepare presentation
+- [ ] Prepare backup slides for technical questions
