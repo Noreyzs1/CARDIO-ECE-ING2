@@ -1,7 +1,7 @@
 #ifndef HEARTRATE_H
 #define HEARTRATE_H
 
-#include "../state.h"
+#include "../state.hpp"
 
 void heartrate_init(void);
 

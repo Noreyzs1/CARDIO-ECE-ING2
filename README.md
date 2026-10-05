@@ -15,7 +15,7 @@ Le projet est organisé selon les fonctions secondaires du cahier des charges :
 
 Les paramètres globaux sont regroupés dans `config.h`.
 Les types communs sont définis dans `types.h`.
-L'état global du système est défini dans `state.h`.
+L'état global du système est défini dans `state.hpp`.
 
 ## État actuel
 

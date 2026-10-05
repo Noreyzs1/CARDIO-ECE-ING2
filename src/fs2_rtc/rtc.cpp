@@ -1,4 +1,4 @@
-#include "rtc.h"
+#include "rtc.hpp"
 
 // Initalisation RTC
 ThreeWire myWire(PIN_IO,PIN_CLK,PIN_CE);
@@ -13,21 +13,21 @@ static char textHeure[9];
 void texteDateHeure(){
 
     snprintf(textDate,sizeof(textDate),"%02u:%02u:%04u",
-             (unsigned int)now.Day(),
-             (unsigned int)now.Month(),
-             (unsigned int)now.Year());
+             (u16)now.Day(),
+             (u16)now.Month(),
+             (u16)now.Year());
     
     snprintf(textHeure,sizeof(textHeure),"%02u:%02u:%02u",
-             (unsigned int)now.Hour(),
-             (unsigned int)now.Minute(),
-             (unsigned int)now.Second());
+             (u8)now.Hour(),
+             (u8)now.Minute(),
+             (u8)now.Second());
 }
 
 bool TestValidite(){
     RtcDateTime DateCompil(__DATE__,__TIME__);
     if (now<DateCompil){
         return false;
-        //A rajouter message d'erreur sur l'ecran oled peuèt etre
+        //A rajouter message d'erreur sur l'ecran oled peuèt etre // Ça se voit c'est MAxime qui a écrit ça
     }
     else if (now>=DateCompil){
         return true;
